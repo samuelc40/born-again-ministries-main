@@ -1,0 +1,76 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-wrap">
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			   <li style="background-image: url(static/images/church1-01.jpeg.jpg);">
+				   <div class="overlay"></div>
+				   <div class="container-fluid">
+					   <div class="row">
+						   <div class="col-md-6 col-md-offset-3 text-center slider-text">
+							   <div class="slider-text-inner">
+								   <h1>Notices</h1>
+									<p> <a href="{% url 'notice-form' %}" class="btn btn-primary btn-learn">Upload a Notice <i class="icon-arrow-right3"></i></a></p>
+							   </div>
+						   </div>
+					   </div>
+				   </div>
+			   </li>
+			  </ul>
+		  </div>
+	</aside>
+	<div style="font-family: Source Sans Pro, sans-serif; align-items: center;" id="fh5co-events">
+		<div class="row animate-box">
+			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+				<h2>Notices</h2>
+				<p>These are the admin varified Notices from the users, and if you want to show a notice on this page Click on the Upload a Notice.</p>
+			</div>
+		</div>
+		<div class="row">
+			{% for not in notice reversed %}
+			{% if not.varify %}
+			<div id="notice-box" class="col-lg-3 col-md-3 col-sm-4 animate-box">
+				<style>
+					#notice-box{
+						font-family: Source Sans Pro, sans-serif;
+						box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+						margin: 40px 40px;
+						padding: 20px 30px;
+						border-radius: 10px;
+						align-items: center;
+						background: #dddfdf;
+						max-height: 300px;
+					}
+				</style>
+				<div class="events-entry">
+					<center><h3 style="font-family: Source Sans Pro, sans-serif;"><a href="#">{{ not.title|truncatechars:20 }}</a></h3></center>
+					<hr>
+					<!-- <span class="date"></span> -->
+					<!-- <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p> -->
+					<!-- <p>{{ not.desc }}</p> -->
+					<!-- <span class="date">{{ not.date }}</span> -->
+					<p>Date: {{ not.date.date }}</p>
+					<!-- <span class="date">{{ not.time }}</span> -->
+					<p>Time: {{ not.date.time }}</p>
+					<p>{{ not.desc|truncatechars:58 }}</p>
+					<a href="{% url 'notice-detail' not.id %}" style="font-weight:600">Read More <i class="icon-arrow-right3"></i></a>
+
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<div id="fh5co-counter" class="fh5co-counters fh5co-light-grey">
+	<p> <a href="{% url 'notice-form' %}" class="btn btn-primary btn-learn">Upload a Notice <i class="icon-arrow-right3"></i></a></p>
+	</div>
+</div><!-- END container-wrap -->
+
+
+{% endblock %}

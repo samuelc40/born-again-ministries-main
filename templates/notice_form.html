@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-wrap">
+	
+	<div id="fh5co-contact">
+		<div class="row animate-box">
+			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+				<h2>Notice Form</h2>
+				<p>Fill the details of the notice you want to display in this site, It will be displayed in the notice page after the admin varified your notice.</p>
+			</div>
+		</div>
+		<div class="row">
+			
+			<div class="col-lg-12 col-md-12 animate-box">
+				<form method="post" action="{% url 'notice-form' %}" class="row">
+					{% csrf_token %}
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Name" name="name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Title of your notice" name="title" required>
+						</div>
+					</div>
+                    <!-- <div class="col-md-6">
+						<div class="form-group">
+							<input type="date" class="form-control" placeholder="date" name="date" required>
+						</div>
+					</div> -->
+                    <!-- <div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder=" TIME: e.g: 3:00pm to 4:30pm" name="time">
+						</div>
+					</div> -->
+                    <!-- <div class="col-md-12">
+						<div class="form-group">
+							<textarea required name="message" class="form-control" id="" cols="20" rows="3" placeholder="Type Your notice here"></textarea>
+						</div>
+					</div> -->
+					<div class="col-md-12">
+						<div class="form-group">
+							<textarea required class="form-control" id="" cols="30" rows="7" placeholder="Type Your notice here!" name="desc"></textarea>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<input style="font-family: Source Sans Pro, sans-serif;" type="submit" value="Send Notice" class="btn btn-primary btn-modify">
+						</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+
+	<div id="fh5co-counter" class="fh5co-counters fh5co-light-grey">
+		
+	</div>
+</div><!-- END container-wrap -->
+
+{% endblock %}

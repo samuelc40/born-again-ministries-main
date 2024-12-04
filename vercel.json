@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "churchproject/wsgi.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": {
+        "Location": "https://borngainministrieskochi.org.in/$1"
+      }
+    }
+  ]
+}

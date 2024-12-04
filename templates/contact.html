@@ -1,0 +1,97 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-wrap">
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			   <li style="background-image: url(static/images/church1-01.jpeg.jpg);">
+				   <div class="overlay"></div>
+				   <div class="container-fluid">
+					   <div class="row">
+						   <div class="col-md-6 col-md-offset-3 text-center slider-text">
+							   <div class="slider-text-inner">
+								   <h1>Contact Us</h1>
+							   </div>
+						   </div>
+					   </div>
+				   </div>
+			   </li>
+			  </ul>
+		  </div>
+	</aside>
+	<div id="fh5co-contact">
+		<div class="row animate-box">
+			<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+				<h2>Contact us</h2>
+				<p>Contact Us by sending Messages using the form given below and share your thoughts.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-md-push-8 animate-box">
+				<h3>Our Address</h3>
+				<ul class="contact-info">
+					<li><i class="icon-location4"></i>Born Again Ministries, Near Lissie Hospital, KRA-78, Kottaikanal East Road, Kochi - 682018.</li>
+					<li><i class="icon-phone3"></i>Contact No. 9447250650</li>
+					<!-- <li><i class="icon-location3"></i><a href="#">.com</a></li> -->
+					<!-- <li><i class="icon-globe2"></i><a href="#">www.yoursite.com</a></li> -->
+				</ul>
+			</div>
+			<div class="col-md-7 col-md-pull-2 animate-box">
+				<form method="post" action="{% url 'contact' %}" class="row">
+					{% csrf_token %}
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Name" name="name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Phone number" name="phone" required>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<textarea required name="message" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<input style="font-family: Source Sans Pro, sans-serif;" type="submit" value="Send Message" class="btn btn-primary btn-modify">
+						</div>
+					</div>
+				</form>
+				<!-- <div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<center><h1 style="font-family: Source Sans Pro, sans-serif;">Sign In to send message</h1></center>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<center><div class="form-group">
+							<a href="{% url 'signin' %}" class="btn btn-primary btn-modify">Sign In</a>
+						</div></center>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container-wrap">
+		<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3929.3264788754873!2d76.2883159!3d9.9898673!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d440088ac81%3A0x89202e85b529694d!2sLisie%20Hospital%20Rd%2C%20Ernakulam%20North%2C%20Kaloor%2C%20Ernakulam%2C%20Kochi%2C%20Kerala!5e0!3m2!1sml!2sin!4v1695285523260!5m2!1sml!2sin" width="1050" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3697151080632!2d76.28737127448336!3d9.986287490118428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d9460f48657%3A0xbd0732f5b46f23f2!2sBorn%20Again%20Ministries%20Pentacostal%20Church!5e0!3m2!1sml!2sin!4v1698169611539!5m2!1sml!2sin" width="1050" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3278416049357!2d76.28862787448342!3d9.989754490115136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d46cea51547%3A0x9df32daeeb9cf48c!2sCanal%20Rd%2C%20Kathrikadavu%2C%20Kaloor%2C%20Ernakulam%2C%20Kerala%20682017!5e0!3m2!1sml!2sin!4v1695961869943!5m2!1sml!2sin" width="1050" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+	</div>
+
+	<div id="fh5co-counter" class="fh5co-counters fh5co-light-grey">
+		
+	</div>
+</div><!-- END container-wrap -->
+
+{% endblock %}
