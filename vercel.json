@@ -7,9 +7,6 @@
     {
       "src": "/(.*)",
       "status": 301,
-      "headers": {
-        "Location": "https://borngainministrieskochi.org.in/$1"
-      }
     }
   ]
 }
