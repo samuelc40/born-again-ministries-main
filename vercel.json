@@ -6,7 +6,8 @@
   "routes": [
     {
       "src": "/(.*)",
-      "status": 301,
+      "destination": "https://borngainministrieskochi.org.in/$1",
+      "permanent": true
     }
   ]
 }
